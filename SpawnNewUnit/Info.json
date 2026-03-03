@@ -1,0 +1,12 @@
+﻿{
+  "Id": "SpawnNewUnit",
+  "DisplayName": "SpawnNewUnit",
+  "Author": "",
+  "Version": "1.0.0",
+  "ManagerVersion": "0.25.0",
+  "Requirements": [],
+  "AssemblyName": "SpawnNewUnit.dll",
+  "EntryMethod": "SpawnNewUnit.Main.Load",
+  "HomePage": "",
+  "Repository": ""
+}
