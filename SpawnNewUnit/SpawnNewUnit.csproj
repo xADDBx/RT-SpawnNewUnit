@@ -29,6 +29,7 @@
 		<Reference Include="$(RogueTraderInstallDir)\WH40KRT_Data\Managed\UniRx.dll*" Private="false" />
 		<Reference Include="$(RogueTraderInstallDir)\WH40KRT_Data\Managed\ContextData.dll*" Private="false" />
 		<Reference Include="$(RogueTraderInstallDir)\WH40KRT_Data\Managed\StateHasher.dll*" Private="false" />
+		<Compile Remove="EditorFiles\*" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Include="Info.json" CopyToOutputDirectory="PreserveNewest" Link="%(Filename)%(Extension)" />

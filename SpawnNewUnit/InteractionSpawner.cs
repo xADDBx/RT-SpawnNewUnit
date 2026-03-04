@@ -49,7 +49,6 @@ namespace SpawnNewUnit {
                 var b = obj.AddComponent<InteractionAction>();
                 b.Settings = new() {
                     NotInCombat = true,
-                    AlwaysDisabled = false,
                     ShowOvertip = true,
                     UIType = UIInteractionType.Action,
                     ProximityRadius = 100000,
