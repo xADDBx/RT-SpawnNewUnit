@@ -14,8 +14,9 @@ public static class Main {
     public static bool Load(UnityModManager.ModEntry modEntry) {
         Log = modEntry.Logger;
         ModEntry = modEntry;
-        Subscriber = EventBus.Subscribe(new UnitSpawner());
         HarmonyInstance = new Harmony(modEntry.Info.Id);
+        SaveSpecificSettings.Initialize();
+        Subscriber = EventBus.Subscribe(new UnitSpawner());
         try {
             HarmonyInstance.PatchAll(Assembly.GetExecutingAssembly());
         } catch {
