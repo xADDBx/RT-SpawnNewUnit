@@ -21,11 +21,12 @@ namespace SpawnNewUnit {
             user.Health.LastHandledDamage = null;
         }
     }
+    // https://discord.com/channels/645948717400064030/791053285657542666/1478767896850333756
     [HarmonyPatch]
     public static class InteractionSpawner {
         [HarmonyPatch(typeof(SceneLoader), nameof(SceneLoader.LoadSceneCoroutine)), HarmonyPostfix]
-        private static void SceneLoader_LoadSceneCoroutine_Patch(Task __result, SceneReference scene) {
-            __result.ContinueWith(t => {
+        private static void SceneLoader_LoadSceneCoroutine_Patch(ref Task __result, SceneReference scene) {
+            __result = __result.ContinueWith(t => {
                 if (scene.SceneName == AffectedSceneName.Value) {
                     AddButton();
                 }
@@ -68,6 +69,8 @@ namespace SpawnNewUnit {
                     }
 
                 };
+                // Important!
+                obj.GetComponent<MapObjectView>().UniqueViewId = ButtonId;
             } catch (Exception ex) {
                 Main.Log.Log(ex.ToString());
             }
